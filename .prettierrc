@@ -1,0 +1,9 @@
+{
+	"arrowParens": "avoid",
+	"bracketSpacing": true,
+	"bracketSameLine": true,
+	"printWidth": 120,
+	"proseWrap": "always",
+	"trailingComma": "es5",
+	"useTabs": false
+}
