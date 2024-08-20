@@ -13,7 +13,8 @@ const config: CodegenConfig = {
 			},
 		},
 	},
-	ignoreNoDocuments: true,
+	noSilentErrors: true,
+	ignoreNoDocuments: false,
 };
 
 export default config;
