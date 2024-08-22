@@ -55,7 +55,7 @@ Your task is to enhance the existing project by fetching a list of Pokémon usin
 3. **Filter Implementation:**
    - Add a `TextField` component from MUI for filtering.
    - Implement the filtering logic on the client-side, using the `name` field to filter the list.
-   - Use `lodash`'s `debounce` function or implement a custom debounce to optimize the filter input.
+   - Implement a custom debounce to optimize the filter input.
 
 4. **Pagination:**
    - Implement pagination using the Apollo Client’s support for paginated queries.
