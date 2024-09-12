@@ -4,7 +4,7 @@ import { Button } from "@fluentui/react-components";
 
 function App() {
   const { data, isFetching } = useQuery({
-    queryKey: ["pokemons"],
+    queryKey: ["user"],
     initialData: null,
     queryFn: fetchUserList,
   });
