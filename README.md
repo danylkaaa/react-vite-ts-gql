@@ -1,75 +1,85 @@
-### Live Coding Task: React/TypeScript/Apollo GraphQL/Vite/MUI
+### Task for Interview: Fetch and Display Data using TypeScript, React Query, JSONPlaceholder API, and Fluent UI
 
-#### **Project Context:**
-You are given a project where everything is already set up using the following technologies:
-- **React** with **TypeScript**
-- **Apollo GraphQL** for data fetching
-- **Vite** as the build tool
-- **Material-UI (MUI)** for UI components
+---
 
-#### **Objective:**
-Your task is to enhance the existing project by fetching a list of Pokémon using a GraphQL API and displaying them in a table using Material-UI (MUI). You will also implement a filter field with a debounce function, add pagination, and optionally add a popover with additional information about a Pokémon when hovering over a row.
+**Objective**:  
+The goal of this task is to evaluate your skills with TypeScript, React Query (`useQuery`), and Fluent UI, while using a public API (`JSONPlaceholder`). You will fetch and display data in a well-structured React application.
 
-#### **Tasks:**
+### Requirements:
 
-1. **Fetch Pokémon List:**
-   - Use the GraphQL API provided at `https://beta.pokeapi.co/graphql/console/` to fetch a list of Pokémon.
-   - Display the list in a Material-UI table.
+1. **Use TypeScript** for the entire application.
+2. **Use React Query (`useQuery`)** to manage server state and data fetching.
+3. **Use Fluent UI** for styling and UI components.
+4. Fetch data from the **JSONPlaceholder API**.
 
-2. **Add Filter with Debounce:**
-   - Implement a text input field that allows users to filter the Pokémon list by name.
-   - Use a debounce function to minimize the number of API requests made while filtering.
+---
 
-3. **Add Pagination:**
-   - Implement pagination to manage the display of a large number of Pokémon.
-   - Use Apollo's pagination support to efficiently fetch and display paginated data.
-   - Implement Material-UI’s pagination component to navigate between pages.
+### Task Details:
 
-4. **Optional: Add Popover on Hover:**
-   - Enhance the table rows so that when a user hovers over a Pokémon, a popover appears showing additional information about that Pokémon.
-
-#### **Resources:**
-- **GraphQL API:** [PokeAPI GraphQL Console](https://beta.pokeapi.co/graphql/console/)
-- **MUI Documentation:** [Material-UI Components](https://mui.com/material-ui/all-components/)
-
-#### **Instructions:**
-1. **Fetching Data:** 
-   - Use Apollo Client to set up a query to fetch the Pokémon data. 
-   - Example query:
-     ```graphql
-     query GetPokemonList($limit: Int, $offset: Int) {
-       pokemon_v2_pokemon(limit: $limit, offset: $offset) {
-         id
-         name
-         height
-         weight
-       }
-     }
+#### 1. Fetch List of Users:
+   - Fetch the list of users from the endpoint:
      ```
-   - Define appropriate TypeScript types for the response.
+     https://jsonplaceholder.typicode.com/users
+     ```
+   - Display the users in a **Fluent UI List** or **Table** component.
+   - Each item in the list should display the user's name and be clickable/selectable.
 
-2. **Table Implementation:**
-   - Use Material-UI’s `Table`, `TableHead`, `TableBody`, `TableCell`, and `TableRow` components to create the table.
-   - Ensure that the table is properly styled and responsive.
+#### 2. Fetch Posts and Comments:
+   - When a user is selected from the list:
+     - Fetch the posts made by that user from the endpoint:
+       ```
+       https://jsonplaceholder.typicode.com/posts?userId={userId}
+       ```
+     - For each post, fetch the comments using the post ID:
+       ```
+       https://jsonplaceholder.typicode.com/comments?postId={postId}
+       ```
 
-3. **Filter Implementation:**
-   - Add a `TextField` component from MUI for filtering.
-   - Implement the filtering logic on the client-side, using the `name` field to filter the list.
-   - Implement a custom debounce to optimize the filter input.
+#### 3. Display the Data:
+   - Display the posts and associated comments for the selected user:
+     - **Post Title** should be displayed in bold.
+     - **Comments** should be displayed underneath each post.
+   - Use Fluent UI components such as **DetailsList**, **Card**, or **List** to display posts and comments.
 
-4. **Pagination:**
-   - Implement pagination using the Apollo Client’s support for paginated queries.
-   - Use the `Pagination` component from Material-UI to allow users to navigate through pages.
-   - Ensure that the pagination UI is intuitive and responsive.
+---
 
-5. **Popover (Optional):**
-   - Use MUI’s `Popover` component.
-   - On hover over a table row, fetch additional details about the Pokémon (e.g., abilities, types) and display them in the popover.
+### UI Requirements:
 
-#### **Evaluation Criteria:**
-- **Code Quality:** Clean, well-structured code with proper TypeScript typings.
-- **UI/UX:** The table, filter, and pagination should be intuitive and responsive.
-- **Efficiency:** Proper use of GraphQL queries, debounce, pagination, and state management.
-- **Optional Task:** Creativity and attention to detail in the implementation of the popover.
+1. The UI should have three main sections:
+   - **User List**: A list of users or dropdown to select a user.
+   - **Posts List**: Display a list of posts by the selected user.
+   - **Comments**: Each post should display its corresponding comments.
 
-Good luck!
+2. Ensure a clean, readable, and responsive layout using Fluent UI.
+
+---
+
+### Data Fetching & Caching:
+- Use **React Query (`useQuery`)** to fetch and cache the data.
+- Implement proper **loading** and **error** states for both the users, posts, and comments.
+- **Cache** the fetched data appropriately so switching between users does not re-fetch unnecessarily.
+
+---
+
+### Bonus:
+- Use Fluent UI's **Shimmer** component for loading states.
+- Implement basic filtering or sorting functionality for posts or comments.
+- Make the layout responsive and ensure it's user-friendly on different screen sizes.
+
+---
+
+### What We Are Looking For:
+1. **Code Quality**: Clean, readable, and well-structured code using TypeScript.
+2. **React Query**: Correct usage of `useQuery` for fetching and caching data.
+3. **Fluent UI**: Proper use of Fluent UI components to create a modern and professional UI.
+4. **State Management**: Efficient management of application state with React Query and React hooks.
+5. **Data Fetching**: Correct API calls and data handling using JSONPlaceholder.
+   
+---
+
+### JSONPlaceholder API Endpoints:
+- **Users**: `https://jsonplaceholder.typicode.com/users`
+- **Posts by User**: `https://jsonplaceholder.typicode.com/posts?userId={userId}`
+- **Comments by Post**: `https://jsonplaceholder.typicode.com/comments?postId={postId}`
+
+Good luck! Feel free to be creative with the implementation, but ensure the functionality and user experience are prioritized.

@@ -7,19 +7,17 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "compile": "NODE_TLS_REJECT_UNAUTHORIZED=0 graphql-codegen",
-    "watch": "NODE_TLS_REJECT_UNAUTHORIZED=0 graphql-codegen -w"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@apollo/client": "^3.11.4",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@fluentui/react": "^8.120.9",
     "@fontsource/roboto": "^5.0.14",
     "@graphql-codegen/cli": "^5.0.2",
-    "@mui/icons-material": "^5.16.6",
-    "@mui/material": "^5.16.6",
     "@parcel/watcher": "^2.4.1",
+    "@tanstack/react-query": "^5.55.4",
+    "axios": "^1.7.7",
     "graphql": "^16.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
