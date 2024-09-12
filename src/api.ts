@@ -6,7 +6,7 @@ interface User {
   id: number;
 }
 
-export const fetchPokemonList = async (): Promise<User[]> => {
+export const fetchUserList = async (): Promise<User[]> => {
   const { data } = await axios.get<User[]>("https://jsonplaceholder.typicode.com/users");
   return data;
 };
