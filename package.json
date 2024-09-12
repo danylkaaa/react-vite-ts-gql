@@ -12,7 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@fluentui/react": "^8.120.9",
+    "@fluentui/react-components": "^9.54.14",
     "@fontsource/roboto": "^5.0.14",
     "@graphql-codegen/cli": "^5.0.2",
     "@parcel/watcher": "^2.4.1",

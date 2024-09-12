@@ -1,18 +1,18 @@
-import { PrimaryButton } from "@fluentui/react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchPokemonList } from "./api";
+import { fetchUserList } from "./api";
+import { Button } from "@fluentui/react-components";
 
 function App() {
-  const { data, loading } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["pokemons"],
     initialData: null,
-    queryFn: fetchPokemonList,
+    queryFn: fetchUserList,
   });
 
   return (
     <div>
-      <PrimaryButton>Hello world</PrimaryButton>
-      {loading ? "loading" : data?.map(p => <div key={p.name}> {p.name}</div>)}
+      <Button>Hello world</Button>
+      {isFetching ? "loading" : data?.map(p => <div key={p.name}> {p.name}</div>)}
     </div>
   );
 }
