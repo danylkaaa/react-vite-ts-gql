@@ -35,11 +35,11 @@ const App = () => {
       />
       <div>
         <h2>External Controls</h2>
-        <button onClick={() => timerRef.start()}>Start</button>
-        <button onClick={() => timerRef.pause()}>Pause</button>
-        <button onClick={() => timerRef.reset()}>Reset</button>
-        <button onClick={() => timerRef.add(10)}>+10 Seconds</button>
-        <button onClick={() => timerRef.subtract(10)}>-10 Seconds</button>
+        <button onClick={() => timerRef.current?.start()}>Start</button>
+        <button onClick={() => timerRef.current?.pause()}>Pause</button>
+        <button onClick={() => timerRef.current?.reset()}>Reset</button>
+        <button onClick={() => timerRef.current?.add(10)}>+10 Seconds</button>
+        <button onClick={() => timerRef.current?.subtract(10)}>-10 Seconds</button>
       </div>
     </div>
   );
