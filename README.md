@@ -25,7 +25,7 @@ Example Usage:
 
 ```js
 const App = () => {
-  let timerRef;
+  let timerRef=useRef(null)
 
   return (
     <div>
